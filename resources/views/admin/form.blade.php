@@ -77,5 +77,5 @@
         $(function() {
             bsCustomFileInput.init();
         });
-    </script>
-    @endsection
+</script>
+@endsection
