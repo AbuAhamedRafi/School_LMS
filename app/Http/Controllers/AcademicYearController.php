@@ -49,24 +49,26 @@ class AcademicYearController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(AcademicYear $academicYear)
+    public function delete($id)
     {
-        //
+        $data = AcademicYear::find($id);
+        $data->delete();
+        return redirect()->route('academic_year.read')->with('success', 'Academic Year Deleted Successfully');
+    }
+    public function edit($id)
+    {
+        $data['academic_year'] = AcademicYear::find($id);
+        return view('admin.edit_academic_year',$data);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, AcademicYear $academicYear)
+    public function update(Request $request)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(AcademicYear $academicYear)
-    {
-        //
+        $data =AcademicYear::find($request->id);
+        $data->name = $request->name;
+        $data->update();
+        return redirect()->route('academic_year.read')->with('success', 'Academic Year Updated Successfully');
     }
 }

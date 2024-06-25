@@ -28,6 +28,13 @@
           <div class="row">
               <div class="col-12">
                   <div class="card">
+                    @if (Session::has('success'))
+                    <div class="alert alert-success">
+                        {{Session::get('success')}}
+                    </div>
+                @endif
+                     <div class="card-header">
+                        <h3 class="card-title">Academic Year List</h3>
                       <div class="card-body">
                           <table id="example2" class="table table-bordered table-hover">
                               <thead>
@@ -44,8 +51,8 @@
                                 <tr>
                                     <td>{{$item->id}}</td>
                                     <td>{{$item->name}}</td>
-                                    <td><a  href="" class="btn btn-primary">Edit</a></td>
-                                    <td><a href="" class="btn btn-danger">Delete</a></td>
+                                    <td><a  href="{{route('academic_year.edit',$item->id)}}" class="btn btn-primary">Edit</a></td>
+                                    <td><a href="{{route('academic_year.delete',$item->id)}}" onClick="return confirm('Are you sure?')" class="btn btn-danger">Delete</a></td>
                                    <td>{{$item->created_at}}</td>
                                 </tr>
                                 @endforeach
