@@ -217,6 +217,30 @@
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-chart-pie"></i>
                                 <p>
+                                    Academic Year
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('academic_year.create')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Record</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('academic_year.read')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>View Record</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-chart-pie"></i>
+                                <p>
                                     Class Management
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
@@ -230,6 +254,30 @@
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{route('class.read')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>View Record</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-chart-pie"></i>
+                                <p>
+                                    Fee Management
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('fee_head.create')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Record</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('fee_head.read')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>View Record</p>
                                     </a>

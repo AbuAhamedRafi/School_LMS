@@ -31,8 +31,7 @@
                         <div class="card-header">
                             <h3 class="card-title">Add Class</h3>
                         </div>
-
-
+                        
                         <form action="{{route('class.store')}}" method="post">
                             @csrf
                             <div class="card-body">
