@@ -8,4 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 class FeeStructure extends Model
 {
     use HasFactory;
+    // protected $fillable = [
+    //     'april',
+    //     'may',
+    //     'june',
+    //     'july',
+    //     'august',
+    //     'september',
+    //     'october',
+    //     'november',
+    //     'december',
+    //     'january',
+    //     'february',
+        
+    //     'academic_year_id',
+    //     'class_id',
+    //     'fee_head_id',
+    // ];
 }
