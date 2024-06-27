@@ -19,6 +19,10 @@ class FeeStructureController extends Controller
     }
     public function store(Request $request)
     {
-        echo"okay";
+        $request->validate([
+            'class_id' =>'required',
+            'academic_year_id' =>'required',
+            'fee_head_id' =>'required',
+        ]);
     }
 }

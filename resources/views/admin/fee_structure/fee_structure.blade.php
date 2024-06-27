@@ -31,12 +31,23 @@
                             <div class="card-header">
                                 <h3 class="card-title">Fee Structure</h3>
                             </div>
-
-
                             <form action="{{ route('fee_structure.store') }}" method="post">
                                 @csrf
                                 <div class="card-body">
                                     <div class="row">
+                                        <div class="form-group col-md-6">
+                                            <label for="">Academic Year</label> <select name="class_id"
+                                                class="form-control" id="">
+                                                <option value="">Academic Year</option>
+                                                @foreach ($academic_year as $academic_year)
+                                                    <option value="{{ $academic_year->id }}">{{ $academic_year->name }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                            @error('academic_year_id')
+                                                <p class="text-danger">{{ $message }}</p>
+                                            @enderror
+                                        </div>
                                         <div class="form-group col-md-6">
                                             <label for="">Select Class</label> <select name="class_id"
                                                 class="form-control" id="">
@@ -45,6 +56,22 @@
                                                     <option value="{{ $class->id }}">{{ $class->name }}</option>
                                                 @endforeach
                                             </select>
+                                            @error('class_id')
+                                                <p class="text-danger">{{ $message }}</p>
+                                            @enderror
+                                        </div>
+
+                                        <div class="form-group col-md-6">
+                                            <label for="">Fee Head</label> <select name="class_id"
+                                                class="form-control" id="">
+                                                <option value="">Fee Head</option>
+                                                @foreach ($fee_head as $fee_head)
+                                                    <option value="{{ $fee_head->id }}">{{ $fee_head->name }}</option>
+                                                @endforeach
+                                            </select>
+                                            @error('fee_head_id')
+                                                <p class="text-danger">{{ $message }}</p>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="container text-center">
