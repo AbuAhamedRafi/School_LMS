@@ -49,5 +49,9 @@ route::group(['prefix' => 'admin'], function () {
 
         route::get('fee-structure/create', [FeeStructureController::class, 'index'])->name('fee-structure.create');
         route::post('fee-structure/store', [FeeStructureController::class, 'store'])->name('fee_structure.store');
+        route::get('fee-structure/read', [FeeStructureController::class, 'read'])->name('fee_structure.read');
+        route::get('fee_structure/edit/{id}', [FeeStructureController::class, 'edit'])->name('fee_structure.edit');
+        route::get('fee_structure/delete/{id}', [FeeStructureController::class, 'delete'])->name('fee_structure.delete');
+        route::post('fee_structure/update/{id}', [FeeStructureController::class, 'update'])->name('fee_structure.update');
     });
 });

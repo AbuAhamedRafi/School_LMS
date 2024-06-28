@@ -27,4 +27,44 @@ class FeeStructureController extends Controller
         FeeStructure::create($request->all());
         return redirect()->route('fee-structure.create')->with('success', 'Fee Structure Added Successfully');
     }
+    public function read()
+    {
+        $data['feeStructure']= FeeStructure::with(['FeeHead','AcademicYear','Classes'])->latest()->get();
+        return view('admin.fee_structure.fee_structure_list', $data);
+    }
+    public function delete($id)
+    {
+        $data = FeeStructure::find($id);
+        $data->delete();
+        return redirect()->route('fee_structure.read')->with('success', 'Fee Structure Deleted Successfully');
+    }
+    public function edit($id)
+    {
+        $data['fee'] = FeeStructure::find($id);
+        $data['classes'] = Classes::all();
+        $data['academic_year'] = AcademicYear::all();
+        $data['fee_head'] = FeeHead::all();
+        return view('admin.fee_structure.edit_fee_structure',$data);
+    }
+    public function update(Request $request, $id)
+    {
+        $fee = FeeStructure::find($id);
+        $fee->class_id = $request->class_id;
+        $fee->academic_year_id = $request->academic_year_id;
+        $fee->fee_head_id = $request->fee_head_id;
+        $fee->april = $request->april;
+        $fee->may = $request->may;
+        $fee->june = $request->june;
+        $fee->july = $request->july;
+        $fee->august = $request->august;
+        $fee->september = $request->september;
+        $fee->october = $request->october;
+        $fee->november = $request->november;
+        $fee->december = $request->december;
+        $fee->january = $request->january;
+        $fee->february = $request->february;
+        $fee->march = $request->march;
+        $fee->update();
+        return redirect()->route('fee_structure.read')->with('success', 'Fee Structure Updated Successfully');
+    }
 }
