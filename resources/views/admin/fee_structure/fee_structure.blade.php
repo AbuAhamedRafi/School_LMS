@@ -36,12 +36,11 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="form-group col-md-6">
-                                            <label for="">Academic Year</label> <select name="class_id"
-                                                class="form-control" id="">
+                                            <label for="">Academic Year</label>
+                                            <select name="academic_year_id" class="form-control" id="">
                                                 <option value="">Academic Year</option>
                                                 @foreach ($academic_year as $academic_year)
-                                                    <option value="{{ $academic_year->id }}">{{ $academic_year->name }}
-                                                    </option>
+                                                    <option value="{{ $academic_year->id }}">{{ $academic_year->name }}</option>
                                                 @endforeach
                                             </select>
                                             @error('academic_year_id')
@@ -49,8 +48,8 @@
                                             @enderror
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="">Select Class</label> <select name="class_id"
-                                                class="form-control" id="">
+                                            <label for="">Select Class</label>
+                                            <select name="class_id" class="form-control" id="">
                                                 <option value="">Select Class</option>
                                                 @foreach ($classes as $class)
                                                     <option value="{{ $class->id }}">{{ $class->name }}</option>
@@ -60,10 +59,10 @@
                                                 <p class="text-danger">{{ $message }}</p>
                                             @enderror
                                         </div>
-
+                            
                                         <div class="form-group col-md-6">
-                                            <label for="">Fee Head</label> <select name="class_id"
-                                                class="form-control" id="">
+                                            <label for="">Fee Head</label>
+                                            <select name="fee_head_id" class="form-control" id="">
                                                 <option value="">Fee Head</option>
                                                 @foreach ($fee_head as $fee_head)
                                                     <option value="{{ $fee_head->id }}">{{ $fee_head->name }}</option>
@@ -74,6 +73,7 @@
                                             @enderror
                                         </div>
                                     </div>
+                                </div>
                                     <div class="container text-center">
                                         <div class="row">
                                             <div class="col">

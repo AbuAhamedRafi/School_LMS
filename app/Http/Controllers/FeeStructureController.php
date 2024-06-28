@@ -24,5 +24,7 @@ class FeeStructureController extends Controller
             'academic_year_id' =>'required',
             'fee_head_id' =>'required',
         ]);
+        FeeStructure::create($request->all());
+        return redirect()->route('fee-structure.create')->with('success', 'Fee Structure Added Successfully');
     }
 }
